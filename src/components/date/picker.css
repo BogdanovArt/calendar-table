@@ -1,0 +1,104 @@
+.Range .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: rgba(34, 136, 255, 0.25) !important;
+  color: #55455D;
+}
+
+.Range .DayPicker-Day--selected.DayPicker-Day--start {
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+.Range .DayPicker-Day--selected.DayPicker-Day--end {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
+
+.DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: rgba(34, 136, 255, 0.25) !important;
+}
+
+.Range .DayPicker-Day {
+  border-radius: 0 !important;
+  padding: 7px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.DayPicker-Day--today {
+  color: #2288FF;
+}
+
+.Range .DayPicker-Day:focus {
+  outline: none;
+}
+
+.Range .DayPicker-Day--start:not(.DayPicker-Day--outside), .Range .DayPicker-Day--end:not(.DayPicker-Day--outside) {
+  background-color: #2288FF !important;
+}
+
+.Range .DayPicker-wrapper {
+  padding: 12px 0;
+}
+.Range .DayPicker-wrapper:focus {
+  outline: none;
+}
+
+.Range .DayPicker-Weekdays {
+  font-size: 12px;
+}
+
+.Range .DayPicker-Weekday {
+  border-bottom: 1px solid #EAEAEA;
+}
+.Range .DayPicker-Weekday:first-child {
+  border-right: 1px solid #EAEAEA;
+}
+
+.Range .DayPicker-WeekNumber{
+  font-size: 10px;
+}
+
+.Range .DayPicker-WeekNumber:hover {
+  color: #2288FF;
+}
+
+.Range .DayPicker-WeekNumber:focus {
+  outline: none;
+}
+
+.Range .DayPicker-Month {
+  display: block;
+  margin: 0 5px;
+  border: 1px solid #EAEAEA;
+  padding: 5px;
+}
+.Range .DayPicker-Month:first-child {
+  background: #f9f9f9;
+  margin-left: 10px;
+}
+.Range .DayPicker-Month:last-child {
+  background: #f9f9f9;
+  margin-right: 10px;
+}
+
+.Range .DayPicker-Months {
+  align-items: stretch;
+}
+
+.Range .DayPicker-Caption {
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Range .DayPicker-Caption:hover {
+  color: #2288FF;
+}
+
+.Range .DayPicker-Caption span.Caption-Year{
+  font-weight: bold;
+  margin-left: 5px;
+  color: #2288FF;
+}
+
+
+

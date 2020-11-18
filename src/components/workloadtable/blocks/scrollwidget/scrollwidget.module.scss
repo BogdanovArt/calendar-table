@@ -1,0 +1,93 @@
+@import "@/assets/styles/variables.scss";
+
+$mainColor: rgba(85, 69, 93, 0.6);
+$secColor: rgba(85, 69, 93, 0.15);
+$monthWidth: calc(100%/12);
+$weekWidth: calc(100%/53);
+
+.scroll-widget{
+  position: sticky;
+  top: 0;
+  border-radius: 5px;
+  background: #EEEDEF;
+  padding: 0 5px;
+  margin-bottom: 25px;
+  margin-right: -2px;
+  z-index: 10;
+  &__wrapper{
+    position: relative;
+    padding-bottom: 25px;
+  }
+  &__weeks{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    border: $border;
+    z-index: 2;
+  }
+  &__week{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: $weekWidth;
+    color: $secColor;
+    height: 24px;
+    font-size: 12px;
+    border-right: $border;
+    background: #fff;
+    user-select: none;
+    cursor: pointer;
+    &:hover{
+      color: $cell-active;
+    }
+    &--active{
+      color: #fff !important;
+      background-color: $cell-active;
+      border-radius: 2px;
+    }
+    &--loaded{
+      color: $mainColor;
+    }
+  }
+  &__week-names{
+    font-size: 12px;
+    padding: 5px 0;
+    color: $mainColor;
+    display: flex;
+    &__name{
+      width: $monthWidth;
+      flex-basis: $monthWidth;
+      text-align: center;
+      &:not(:last-child){
+        border-right: 1px solid $secColor;
+      }
+    }
+  }
+  &__viewport{
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    position: absolute;
+    width: $monthWidth;
+    border-radius: 10px;
+    background: rgba(122, 101, 250, 0.25);
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: .2s;
+    z-index: 1;
+    box-sizing: border-box;
+    &__handle{
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 10px;
+      padding: 3px;
+      border-radius: 15px;
+      color: #fff;
+      background: $cell-active;
+      user-select: none;
+    }
+  }
+}

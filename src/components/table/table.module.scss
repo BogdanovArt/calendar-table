@@ -1,0 +1,55 @@
+@import "../../globals/variables";
+
+.TableWrapper{
+  border: $bor;
+  border-radius: 6px;
+  border-spacing: 0;
+  border-collapse: separate;
+  min-width: 1000px;
+  width: 100%;
+  box-shadow: $shadow;
+  background: #fff;
+
+  td, th{
+    font-size: 12px;
+    > *{
+      display: block;
+    }
+  }
+  tr{
+  }
+  td{
+  }
+  th{
+    color: #6a6a6a;
+  }
+}
+
+.HeadingCell{
+  text-align: left;
+  &:hover{
+    color: $mainC;
+  }
+}
+.TableRowDivider{
+  td{
+    padding: 0;
+    border-bottom: $bor;
+  }
+}
+
+.TableRow:last-of-type td{
+  border: none;
+}
+
+.DataCell{
+  padding: 10px;
+  border-bottom: 1px solid $acc;
+}
+
+.empty-placeholder{
+  height: 500px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}

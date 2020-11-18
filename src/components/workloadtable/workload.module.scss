@@ -1,0 +1,272 @@
+@import "@/assets/styles/variables.scss";
+
+$cellw: 188px;
+$headw: 270px;
+
+.content{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  //border-bottom: $border;
+  //border-right: $border;
+}
+
+.level-1 {
+  box-sizing: border-box;
+  padding-left: 8px;
+  &:before {
+    background: $cell-normal;
+  }
+}
+
+.level-2 {
+  &:before {
+    background: $cell-deep;
+  }
+}
+
+.eject-button{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $cell-active;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: .4s;
+  margin: 2px;
+  z-index: 30;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.table{
+  display: table;
+  &__wrapper{
+    display: inline-flex;
+    position: relative;
+    background: #fff;
+
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 300px;
+    border: $border;
+  }
+  &__scroll{
+    display: inline-flex;
+    margin-left: calc(#{$headw} + 1px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: calc(100% - #{$headw});
+  }
+  &__row{
+    display: table-row;
+    &:last-child{
+      .table__cell--col-pseudo{
+        border-bottom: 1px solid $cell-active;
+      }
+    }
+    &:first-child{   
+      .table__cell--col-pseudo{
+        border-top: 1px solid $cell-active;
+      }      
+      .table__cell--col-active{
+        background: $cell-normal;           
+        .col--heading{
+          border: 1px solid $cell-active;
+          span{
+            color: #fff;
+            background: $cell-active;
+            border: 1px solid $cell-active;
+          }
+        }
+      }
+    }
+  }
+  &__cell{
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+    font-size: 14px;
+    height: 40px;
+    color: $text-color;
+    max-height: 40px;
+    max-width: $cellw;
+    min-width: $cellw;
+    border-right: $border;
+    border-bottom: $border;
+    box-sizing: border-box;
+    z-index: 3;
+    &--heading{
+      position: absolute;
+      left: 0;
+      max-width: calc( #{$headw} + 1px);
+      min-width: calc( #{$headw} + 1px);
+      user-select: none;
+      border: none;
+      z-index: 4;
+      .content {
+        background: #fff;
+        border-right: $border;
+        border-bottom: $border;
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: -1px;
+        left: 0;
+        width: 8px;
+      }
+    }
+    &--expandable{
+      cursor: pointer;
+      &:hover{
+        color: $cell-active;
+      }
+    }
+    &--expanded{
+      &:before {
+        background: $cell-active;
+      }
+    }
+    &--wrapper{
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 15px;
+      height: 100%;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+    }
+    &--col-pseudo{
+      position: absolute;
+      top: 0;
+      bottom: -1px;
+      left: 0;
+      right: -1px;
+      border-left: 1px solid $cell-active;
+      border-right: 1px solid $cell-active;
+      pointer-events: none;
+    }
+    &--col-heading{
+      cursor: pointer;
+      height: 50px;
+      max-height: 50px;
+      .table__cell--wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.col--heading {
+  display: inline-block;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid rgb(223, 223, 223);
+  box-sizing: border-box;
+  span{
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid rgb(223, 223, 223);
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin: -1px;
+  }
+  .col--title{
+    padding: 2px 5px;
+    display: inline-block;
+  }
+}
+
+.type__task{
+  width: 100%;
+  height: 100%;
+  &--info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  a{
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+}
+
+.overloaded {
+  background-color: #ff9c40;
+}
+
+.no-chance{
+  background-color: #e67c73;
+}
+.all-is-lost{
+  background-color: #eb968f;
+}
+.very-bad{
+  background-color: #f0b0ab;
+}
+.bad{
+  background-color: #f5cac7;
+}
+.attention{
+  background-color: #fae4e3;
+}
+.about-to-foul{
+  background-color: #fff;
+}
+.so-so{
+  background-color: #def2e8;
+}
+.normal{
+  background-color: #bce4d1;
+}
+.good{
+  background-color: #9bd7b9;
+}
+.nearly-perfect{
+  background-color: #79c9a2;
+}
+.perfection{
+  background-color: #57bb8a;
+}
+
+.new{
+  color: #1DC00E;
+}
+.going {
+  color: #55455D;
+}
+
+.late {
+  color: #D2000D;
+}
+
+.waiting {
+  color: #FF922E;
+}
+
+.finished {
+  color: #928898;
+  text-decoration: line-through !important;
+}
+
+

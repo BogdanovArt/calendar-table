@@ -1,0 +1,36 @@
+@import "../../globals/variables";
+
+.--prev, .--next{
+  color: $mainT;
+  &:disabled{
+    color: #ccc;
+  }
+}
+.pager-wrapper{
+  margin-top: 10px;
+  background: #fff;
+  box-shadow: $shadow;
+  width: fit-content;
+  border-radius: 50px;
+  overflow: hidden;
+  button{
+    border: none;
+    padding: 8px 10px;
+    background: none;
+    transition: $tr;
+    &:not(:disabled){
+      cursor: pointer;
+    }
+    &:hover:not(:disabled){
+      color: #fff;
+      background: $mainT;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.--active{
+  color: $mainT;
+}
+

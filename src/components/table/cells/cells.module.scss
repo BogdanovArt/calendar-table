@@ -1,0 +1,49 @@
+@import "../../../globals/variables";
+
+.LinkType{
+  color: #354880;
+  text-decoration: none;
+  &:hover{
+    color: $mainC;
+    text-decoration: underline;
+  }
+}
+.StringType{
+  color: #2a2d39;
+}
+.CompType{
+  color: #2a2d39;
+  text-align: left;
+}
+.Total{
+  color: $mainT
+}
+.Divider{
+  margin: 0 3px;
+}
+
+
+.CellContent{
+  display: inline-block;
+}
+
+.MainValue{
+  margin-right: 5px;
+}
+
+.Active{
+  color: $mainT;
+}
+
+.HeadingCell{
+  text-align: left;
+  padding: 20px 10px;
+  cursor: pointer;
+  user-select: none;
+  &:hover{
+    color: $mainT;
+  }
+  span{
+    position: absolute;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../globals/variables";
+
+.nav-wrapper{
+  margin-bottom: 10px;
+  font-size: 16px;
+  > *{
+    padding: 10px;
+    color: $mainD;
+    &:hover{
+      color: $mainT;
+    }
+  }
+}
+
+.NavTab{
+  display: inline-block;
+}
+
+.NavActive{
+  color: $mainT;
+}
